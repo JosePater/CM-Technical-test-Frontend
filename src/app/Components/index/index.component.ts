@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
-import { UsersService } from '../../SERVICES/users.service';
+import { Component, OnInit } from '@angular/core';
+import { UsersService, User } from '../../SERVICES/users.service';
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent {
+export class IndexComponent implements OnInit{
+  // Let
+  ListarUsers?: User[];
 
   constructor(private UsersService: UsersService) { }
 
@@ -18,7 +20,8 @@ export class IndexComponent {
   listarUsers() {
     this.UsersService.getUsers().subscribe(
       res => {
-        console.log(res)
+        console.log(res);
+        this.ListarUsers = <any> res;
       },
       err => console.log(err)
     )
