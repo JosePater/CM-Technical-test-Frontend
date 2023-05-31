@@ -7,6 +7,9 @@ import { IndexComponent } from './Components/index/index.component';
 import { AddComponent } from './Components/add/add.component';
 import { UpdateComponent } from './Components/update/update.component';
 
+import { HttpClientModule } from '@angular/common/http'; // Importar cliente http
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +19,9 @@ import { UpdateComponent } from './Components/update/update.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
