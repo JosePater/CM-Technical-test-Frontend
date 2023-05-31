@@ -27,4 +27,14 @@ export class IndexComponent implements OnInit{
     )
   }
 
+  delete(id:number) {
+    this.UsersService.deleteUser(id).subscribe( 
+      res => {
+        console.log("Usuario Eliminado");
+        this.listarUsers(); // Actualizar elementos    
+    },
+    err => console.log(err)
+    );
+  }
+
 }

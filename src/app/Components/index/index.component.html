@@ -1,5 +1,8 @@
-<h1>Lista de Usuarios</h1>
-<table class="table">
+<div class="container">
+  <h3>Lista de Usuarios</h3>
+  <button type="button" class="btn btn-primary">Add User</button>
+
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -13,11 +16,14 @@
     </thead>
     <tbody>
       <tr *ngFor="let user of ListarUsers">
-        <th>{{user._id}}</th>
-        <td>{{user.name}}</td>
-        <td>{{user.last_name}}</td>
-        <td>{{user.pass}}</td>
-        <td>{{user._date}}</td>
+        <th>{{ user._id }}</th>
+        <td>{{ user.name }}</td>
+        <td>{{ user.last_name }}</td>
+        <td>{{ user.pass }}</td>
+        <td>{{ user._date }}</td>
+        <td><button type="button" class="btn btn-primary">Update</button></td>
+        <td><button *ngIf="user._id" (click)="delete(user._id)" type="button" class="btn btn-danger">Delete</button></td>
       </tr>
     </tbody>
   </table>
+</div>
