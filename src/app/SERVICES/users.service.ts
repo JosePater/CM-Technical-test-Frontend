@@ -31,7 +31,7 @@ export class UsersService {
   }
 
   // Update user
-  updateUSer(id:number, user:any){  // any porque aún no hay interfez
+  updateUser(id:number, user:any){  // any porque aún no hay interfez
     return this.http.put(this.url+'update/'+id, user);
   }
 

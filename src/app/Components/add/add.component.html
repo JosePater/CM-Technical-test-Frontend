@@ -1,1 +1,53 @@
-<p>add works!</p>
+<div class="container">
+  <h4>Agregar Usuario</h4>
+
+  <div class="row">
+    <div class="col-sm-6">
+        <form>
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input [(ngModel)]="user.name" type="text" class="form-control" name="nombre"> <!-- Tomado de add.component.ts -->    
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Apellido</label>
+                <input [(ngModel)]="user.last_name" type="text" class="form-control" name="apellido">
+            </div>
+
+           <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input [(ngModel)]="user.pass" type="password" class="form-control" name="password">
+           </div>
+
+            <div class="mb-3">
+                <label class="form-label">Fecha de Nacimiento</label>
+                <input [(ngModel)]="user._date" type="date" class="form-control" name="date">
+            </div>
+
+            <button (click)="add()" class="btn btn-primary">Agregar</button>
+
+        </form>
+    </div>
+
+    <!-- Mostrar datos Agregados -->
+    <div class="col-sm-6">
+        <form>
+            <div class="mb-3">
+                <label class="form-label">{{user.name}}</label>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">{{user.last_name}}</label>
+            </div>
+            <div class="mb-3">
+                <label type="password" class="form-label" name="password"></label>
+            </div>
+            <div class="mb-3">
+                <label type="date" class="form-label">{{user._date}}</label>
+            </div>
+        </form>
+    </div>
+
+
+  </div>
+
+</div>

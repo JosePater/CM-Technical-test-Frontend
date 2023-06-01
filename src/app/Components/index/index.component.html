@@ -1,6 +1,6 @@
 <div class="container">
   <h3>Lista de Usuarios</h3>
-  <button type="button" class="btn btn-primary">Add User</button>
+  <button routerLink="/add" type="button" class="btn btn-primary">Add User</button>
 
   <table class="table">
     <thead>
@@ -21,8 +21,8 @@
         <td>{{ user.last_name }}</td>
         <td>{{ user.pass }}</td>
         <td>{{ user._date }}</td>
-        <td><button type="button" class="btn btn-primary">Update</button></td>
-        <td><button *ngIf="user._id" (click)="delete(user._id)" type="button" class="btn btn-danger">Delete</button></td>
+        <td><button *ngIf="user._id" (click)="update(user._id)" type="button" class="btn btn-primary">Modificar</button></td>
+        <td><button *ngIf="user._id" (click)="delete(user._id)" type="button" class="btn btn-danger">Borrar</button></td>
       </tr>
     </tbody>
   </table>

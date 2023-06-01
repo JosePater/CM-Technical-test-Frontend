@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService, User } from '../../SERVICES/users.service';
+import { Router } from '@angular/router'; // Usado para update user
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
+
 export class IndexComponent implements OnInit{
   // Let
   ListarUsers?: User[];
 
-  constructor(private UsersService: UsersService) { }
+  constructor(private UsersService: UsersService, private router:Router) { }
 
   ngOnInit(): void {
     this.listarUsers();
@@ -27,6 +29,7 @@ export class IndexComponent implements OnInit{
     )
   }
 
+  // Eliminar usuario
   delete(id:number) {
     this.UsersService.deleteUser(id).subscribe( 
       res => {
@@ -35,6 +38,11 @@ export class IndexComponent implements OnInit{
     },
     err => console.log(err)
     );
+  }
+
+  // Modificar usuario
+  update(id:number) {
+    this.router.navigate(['/update/'+id]);
   }
 
 }
