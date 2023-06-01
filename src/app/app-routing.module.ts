@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './Components/index/index.component';
 import { AddComponent } from './Components/add/add.component';
 import { UpdateComponent } from './Components/update/update.component';
+import { UsersComponent } from './Components/users/users.component';
 
 // Asignación de rutas
 const routes: Routes = [
   { path:'', redirectTo:'/index', pathMatch:'full' },
   { path:'index', component: IndexComponent},
+  { path: 'users/all', component: UsersComponent},
   { path:'add', component: AddComponent },
   { path:'update/:id', component: UpdateComponent }
 ];

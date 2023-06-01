@@ -9,13 +9,15 @@ import { UpdateComponent } from './Components/update/update.component';
 
 import { HttpClientModule } from '@angular/common/http'; // Importar cliente http
 import { FormsModule } from '@angular/forms';
+import { UsersComponent } from './Components/users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     AddComponent,
-    UpdateComponent
+    UpdateComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

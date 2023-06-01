@@ -1,29 +1,10 @@
 <div class="container">
-  <h3>Lista de Usuarios</h3>
-  <button routerLink="/add" type="button" class="btn btn-primary">Add User</button>
+  <h1>Página principal</h1>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Pass</th>
-        <th scope="col">Date</th>
-        <th scope="col">Update</th>
-        <th scope="col">Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of ListarUsers">
-        <th>{{ user._id }}</th>
-        <td>{{ user.name }}</td>
-        <td>{{ user.last_name }}</td>
-        <td>{{ user.pass }}</td>
-        <td>{{ user._date }}</td>
-        <td><button *ngIf="user._id" (click)="update(user._id)" type="button" class="btn btn-primary">Modificar</button></td>
-        <td><button *ngIf="user._id" (click)="delete(user._id)" type="button" class="btn btn-danger">Borrar</button></td>
-      </tr>
-    </tbody>
-  </table>
+  <p>Stack de programación MEAN (MySQL, Express, Angular y NodeJS)</p>
+
+  <div class="container-b">
+    <button type="button" class="btn btn-primary" routerLink="/users/all">Ver usuarios</button>
+    <button type="button" class="btn btn-info">Login</button>
+  </div>
 </div>
