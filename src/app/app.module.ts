@@ -10,6 +10,7 @@ import { UpdateComponent } from './Components/update/update.component';
 import { HttpClientModule } from '@angular/common/http'; // Importar cliente http
 import { FormsModule } from '@angular/forms';
 import { UsersComponent } from './Components/users/users.component';
+import { LoginComponent } from './Components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { UsersComponent } from './Components/users/users.component';
     IndexComponent,
     AddComponent,
     UpdateComponent,
-    UsersComponent
+    UsersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

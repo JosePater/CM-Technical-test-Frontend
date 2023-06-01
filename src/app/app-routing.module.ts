@@ -4,6 +4,7 @@ import { IndexComponent } from './Components/index/index.component';
 import { AddComponent } from './Components/add/add.component';
 import { UpdateComponent } from './Components/update/update.component';
 import { UsersComponent } from './Components/users/users.component';
+import { LoginComponent } from './Components/login/login.component';
 
 // Asignación de rutas
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path:'index', component: IndexComponent},
   { path: 'users/all', component: UsersComponent},
   { path:'add', component: AddComponent },
-  { path:'update/:id', component: UpdateComponent }
+  { path:'update/:id', component: UpdateComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
