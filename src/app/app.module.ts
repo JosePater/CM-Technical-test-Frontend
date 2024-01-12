@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http'; // Importar cliente htt
 import { FormsModule } from '@angular/forms';
 import { UsersComponent } from './Components/users/users.component';
 import { LoginComponent } from './Components/login/login.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './Components/login/login.component';
     AddComponent,
     UpdateComponent,
     UsersComponent,
-    LoginComponent
+    LoginComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
