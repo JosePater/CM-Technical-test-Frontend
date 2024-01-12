@@ -9,8 +9,8 @@ import { Router, ActivatedRoute } from '@angular/router'; // ActivatedRoute: rec
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent implements OnInit {
-    // let
-    user: User = {
+  
+    user: any = {
       _id: 0,
       name: '',
       last_name: '',
@@ -30,8 +30,9 @@ export class UpdateComponent implements OnInit {
     if (typeof this.user._id === 'number') {
         this.UserService.getUser(id_obtenida).subscribe({
         next: res => {
-          this.user = res as User;
-          console.log("res: ",res);
+          this.user = res; // respuesta dentro de []
+          this.user = this.user[0]; // para acceder a la respuesta
+          console.log("res: ", this.user);
         },
         error: err => console.log(err)
       });
@@ -45,7 +46,7 @@ export class UpdateComponent implements OnInit {
         next: res => {
           console.log("Update: ",res);
         },
-        error: err => console.log(err)
+        error: err => console.log('Error: ->',err)
         });
     }
     this.router.navigate(['/index']); // Vuelve a la ruta de inicio

@@ -1,13 +1,13 @@
 <div class="container">
     <h4>Modificar Usuario</h4>
   
-    <div class="row">
+    <div class="row" *ngIf="user">
       <div class="col-sm-6">
           <form>
-            <!-- <div class="mb-3">
+            <div class="mb-3">
                 <label class="form-label">ID</label>
-                <input [(ngModel)]="user._id" type="number" class="form-control" name="ID">
-            </div> -->
+                <input [(ngModel)]="user._id" type="number" class="form-control" name="ID" disabled="true">
+            </div>
 
               <div class="mb-3">
                   <label class="form-label">Nombre</label>
@@ -21,7 +21,7 @@
   
              <div class="mb-3">
                   <label class="form-label">Password</label>
-                  <input [(ngModel)]="user.pass" type="password" class="form-control" name="password">
+                  <input [(ngModel)]="user.password" type="password" class="form-control" name="password">
              </div>
   
               <div class="mb-3">
@@ -35,7 +35,7 @@
       </div>
   
       <!-- Mostrar datos Agregados -->
-      <div class="col-sm-6">
+      <!-- <div class="col-sm-6" hidden>
           <form>
               <div class="mb-3">
                   <label class="form-label">{{user.name}}</label>
@@ -51,7 +51,7 @@
               </div>
           </form>
   
-      </div>
+      </div> -->
   
   
     </div>

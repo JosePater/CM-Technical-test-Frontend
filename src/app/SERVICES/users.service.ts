@@ -37,10 +37,12 @@ export class UsersService {
 
 }
 
+// --- Interface ---
+
 export interface User {
   _id?: number;
   name?: string,
   last_name?: string,
   pass?: string,
-  _date: Date;
+  _date?: Date;
 }
