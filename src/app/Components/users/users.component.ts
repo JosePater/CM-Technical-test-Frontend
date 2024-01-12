@@ -20,24 +20,24 @@ export class UsersComponent {
 
   // Listar Usuarios
   listarUsers() {
-    this.UsersService.getUsers().subscribe(
-      res => {
-        console.log(res);
+    this.UsersService.getUsers().subscribe({
+      next: res => {
         this.ListarUsers = <any> res;
+        console.log('Lista de usuarios:', res);
       },
-      err => console.log(err)
-    )
+      error: err => console.log(err)
+    })
   }
 
   // Eliminar usuario
   delete(id:number) {
-    this.UsersService.deleteUser(id).subscribe( 
-      res => {
-        console.log("Usuario Eliminado");
-        this.listarUsers(); // Actualizar elementos    
-    },
-    err => console.log(err)
-    );
+    this.UsersService.deleteUser(id).subscribe({
+      next: res => {
+        this.listarUsers(); // Actualizar elementos
+        console.log(res); // {status: 'Usuario Eliminado!'}
+      },
+      error: err => console.error('Error al eliminar usuario: ', err)
+    });
   }
 
   // Modificar usuario

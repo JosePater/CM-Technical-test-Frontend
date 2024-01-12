@@ -28,29 +28,25 @@ export class UpdateComponent implements OnInit {
     console.log("ID obtenida: "+id_obtenida);
 
     if (typeof this.user._id === 'number') {
-        this.UserService.getUser(id_obtenida).subscribe(
-        res => {
+        this.UserService.getUser(id_obtenida).subscribe({
+        next: res => {
           this.user = res as User;
           console.log("res: ",res);
         },
-        err => console.log(err)
-      );
+        error: err => console.log(err)
+      });
     }
   }
 
   update() {
     // Manejo del tipo de dato int
     if (typeof this.user._id === 'number') {
-      this.UserService.updateUser(this.user._id, this.user).subscribe(
-        (res) => {
+      this.UserService.updateUser(this.user._id, this.user).subscribe({
+        next: res => {
           console.log("Update: ",res);
-
         },
-        (err) => {
-          console.log(err);
-        
-        }
-      );
+        error: err => console.log(err)
+        });
     }
     this.router.navigate(['/index']); // Vuelve a la ruta de inicio
   }
